@@ -11,7 +11,7 @@
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play MBAS 861 Escape Room.</tw-noscript></noscript></tw-story>
 <tw-storydata name="MBAS 861 Escape Room" startnode="4" creator="Twine" creator-version="2.5.1" format="Harlowe" format-version="3.3.3" ifid="D6225560-7185-4D60-963D-CC26F74A0D0A" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">table, th, td {
   border: 1px solid white;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Optimization Lock" tags="" position="750,525" size="100,100">Smith School of Business is starting a new program to provide PC Computers to all of their incoming Master&#39;s students (loaded with a fully-functioning Precision Tools Suite and Excel Solver!). With the estimation of 1200 Master&#39;s students a year, Smith has put out an RFP for vendors to meet this demand. THere are three vendors being considered with details in the table below. If a vendor is used, there is a minimum order of 300:
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Optimization Lock" tags="" position="725,450" size="100,100">Smith School of Business is starting a new program to provide PC Computers to all of their incoming Master&#39;s students (loaded with a fully-functioning Precision Tools Suite and Excel Solver!). With the estimation of 1200 Master&#39;s students a year, Smith has put out an RFP for vendors to meet this demand. There are three vendors being considered with details in the table below. If a vendor is used, there is a minimum order of 300:
 &lt;table style=&quot;width:100%&quot;&gt;
   &lt;tr&gt;
     &lt;th&gt;Vendor&lt;/th&gt;
@@ -42,35 +42,57 @@
 Determine the model which will minimize costs for the university. Write out the mathematical model and execute the model in Excel.
 
 A successfully executed model will provide the combination to the Optimization Lock. 
+
 The combination of the Optimization Lock is &quot;# of computers supplied by Vendor 1, # of computers supplied by Vendor 2,# of computers supplied by Vendor 3&quot;
 
 
-[Try your lock combination--&gt;[[Optimization Check]] ]</tw-passagedata><tw-passagedata pid="2" name="Central Hub" tags="" position="600,200" size="100,100">You are almost there – last lecture time, a few hours to go and you will be finished MBAS 861 (apart from the final assignment, the presentation, and the final report 😊) However, the door is locked, and you need to find the combination to unlock the door and escape. 
+[Try your lock combination--&gt;[[Optimization Check]] ]
 
-In order to escape the classroom,, you need to solve the 4 models by applying what you have learned in the course, reviewing the content you have completed, (and perhaps a little luck). 
+//(text-colour:cyan)[Go back to the [[Main Classroom]] to try a different lock]//
 
-Work in pairs to solve the models, find the combinations to each of the rooms, and unlock your door to freedom!
+</tw-passagedata><tw-passagedata pid="2" name="Main Classroom" tags="" position="600,200" size="100,100">In order to escape the classroom, you need to unlock the 4 locks below. To unlock these combinations, you will need to solve clues based on models which you learned in the course, by reviewing the content you have completed, (and perhaps a little luck). 
 
-You can work on the models in any order - once you have the combination for the corresponding room, the room will show as completed in the list below.
+Work in pairs to solve the models, find the combinations to each of the locks, and unlock your door to freedom!
+
+You can work on the models in any order - once you have the combination for the locks, the corresponding lock will show as completed in the list below.
 
 I will be available to give hints, and will monitor progress to give updates on where your peers are. 
  
-(if:$optimizationroom is false)[ [[Optimization Lock]] ](else:)[Optimization Lock Completed]
+(if:$optimizationroom is false)[ [[Optimization Lock]] ](else:)[(text-colour:red)[Optimization Lock Completed]]
 
-(if:$treeroom is false)[ [[Decision Tree Room]] ](else:)[Decision Tree Lock Completed]
+(if:$treeroom is false)[ [[Decision Tree Lock]] ](else:)[(text-colour:red)[Decision Tree Lock Completed]]
  
- (if:$ahproom is false)[ [[AHP Lock]] ](else:)[AHP Lock Completed]
+ (if:$ahproom is false)[ [[AHP Lock]] ](else:)[(text-colour:red)[AHP Lock Completed]]
  
- (if:$simroom is false)[ [[Simulation Room]] ](else:)[Simulation Lock Completed]
+ (if:$simroom is false)[ [[Simulation Lock]] ](else:)[(text-colour:red)[Simulation Lock Completed]]
  
- (if:$optimizationroom is true and $ahproom is true)[All Four Locks are unlocked! YOU&#39;RE ALMOST THERE!! Enter the [[Final Room]] to escape MBAS 861]</tw-passagedata><tw-passagedata pid="3" name="Optimization Check" tags="" position="825,300" size="200,200">(set:$answeropt to (prompt:&quot;Please enter the three values here.&quot;,&quot;&quot;))
-(if:$answeropt is &quot;800,0,400&quot;)[UNLOCKED!(set: $optimizationroom to true) Return to [[Central Hub]]](else:)[Lock doesn&#39;t move. Check your values [[Optimization Lock]] ]
+ (if:$optimizationroom is true and $ahproom is true and $simroom is true and $treeroom is true)[All Four Locks are unlocked! YOU&#39;RE ALMOST THERE!! Enter the [[Final Room]] to escape MBAS 861]</tw-passagedata><tw-passagedata pid="3" name="Optimization Check" tags="" position="825,300" size="100,100">(set:$answeropt to (prompt:&quot;Please enter the three values here.&quot;,&quot;&quot;))
+(if:$answeropt is &quot;800,0,400&quot;)[UNLOCKED!(set: $optimizationroom to true) Return to [[Main Classroom]]](else:)[Lock doesn&#39;t move. Check your values [[Optimization Lock]] ]
 
 </tw-passagedata><tw-passagedata pid="4" name="Welcome Page" tags="" position="350,175" size="100,100">(Set: $optimizationroom to false)
 (set: $treeroom to false)
 (set: $ahproom to false)
 (set: $simroom to false)
-[[Central Hub]] </tw-passagedata><tw-passagedata pid="5" name="Decision Tree Room" tags="" position="475,50" size="100,100"></tw-passagedata><tw-passagedata pid="6" name="AHP Lock" tags="" position="475,450" size="100,100">Given the following matrix of pairwise comparisons of relative importance for determining a successful candidate which you are hiring for: 
+You are almost there – last lecture time, a few hours to go and you will be finished MBAS 861 (apart from the final assignments, the presentation, and the final report 😊) However, the door is locked, and you need to find the combination to unlock the door and escape. 
+
+Head to the [[Main Classroom]] to get started to find your way &quot;out&quot; of MBAS 861.</tw-passagedata><tw-passagedata pid="5" name="Decision Tree Lock" tags="" position="425,50" size="100,100">Smith Industries have established a new shampoo to counteract male pattern baldness. In order to evaluate the potential success of the product launch, a company has been contracted to perform some market research. 
+
+Here are the results of the market research survey:
+
+* Similar products in the past have had a successful launch 65% of the time. 
+
+* In the past, products that were successful received a positive market survey result 85% of the time, whilst products that were unsuccessful received a negative market survey result 80% of the time. 
+
+
+Perform the appropriate Bayesian transformation in order to gain the required values of the Decision Tree Lock. 
+
+The combination of the Decision Tree Lock is &quot;P(Unsuccessful launch|Positive Survey Result), P(Negative Survey Result), P(Unsuccessful Launch|Negative Survey)&quot; 
+
+(text-colour:yellow)[&#39;&#39;//*Note: Enter in decimal form, rounded to three decimal places//&#39;&#39;]
+
+[Try your lock combination--&gt;[[Decision Tree Check]] ]
+
+//(text-colour:cyan)[Go back to the [[Main Classroom]] to try a different lock]//</tw-passagedata><tw-passagedata pid="6" name="AHP Lock" tags="" position="475,450" size="100,100">Given the following matrix of pairwise comparisons of relative importance for determining a successful candidate which you are hiring for: 
 &lt;table style=&quot;width:100%&quot;&gt;
   &lt;tr&gt;
     &lt;th&gt;&lt;/th&gt;
@@ -126,10 +148,66 @@ Use the values above to confirm the consistency of these pairwise comparisons. S
 
 The combination of the AHP is &quot;Average Consistency, Consistency Index, Consistency Ratio&quot;
 
-[Try your lock combination--&gt;[[AHP Check]] ]</tw-passagedata><tw-passagedata pid="7" name="Simulation Room" tags="" position="775,50" size="100,100"></tw-passagedata><tw-passagedata pid="8" name="AHP Check" tags="" position="250,600" size="100,100">(set:$answerahp to (prompt:&quot;Please enter the AHP Lock combination here.&quot;,&quot;&quot;))
-(if:$answerahp is &quot;5.315,0.079,0.070&quot;)[UNLOCKED!(set: $ahproom to true) Return to [[Central Hub]]](else:)[Lock doesn&#39;t move. Check your values [[AHP Lock]] ]</tw-passagedata><tw-passagedata pid="9" name="Final Room" tags="" position="600,600" size="100,100">(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X=&quot;)[You did it. 
+(text-colour:yellow)[//&#39;&#39;Note: Enter your response with three decimal places. &#39;&#39;//]
 
-Go tell Patrick your favourite math joke to complete the escape room!]</tw-passagedata></tw-storydata>
+[Try your lock combination--&gt;[[AHP Check]] ]
+
+//(text-colour:cyan)[Go back to the [[Main Classroom]] to try a different lock]//</tw-passagedata><tw-passagedata pid="7" name="Simulation Lock" tags="" position="900,25" size="100,100">The automobile insurance division of the Smith insurance company expects an average of 1,000 claims in the forthcoming year, with the actual number of claims being random and well described by a Poisson distribution. The value of each claim is a random variable, independent of all other claims, with a mean of [[Find Mean for Simulation Lock]] and a standard deviation of $1,500. 
+
+The division has [[Find Capital Amount for Simulation Lock]] of capital, which is split into two parts. The first part is the reserve capital needed to pay claims over the next year. The remainder is invested in short-term bonds, which provide a random return, equally likely to be any value between [[Find Lower Bound of Return for Simulation Lock]] and 8%. If the reserve capital turns out to be less than the total value of claims for the year, the division has to borrow enough money, at a cost of 10% of the amount borrowed, to make up the difference. 
+
+The firm would like to find a capital allocation that maximizes the expected amount of cash they have left at the end of the year. Suppose they have narrowed down their choice to the following possible amounts of reserve capital: $4.5 million, $4.6 million, $4.7 million, $4.8 million, $4.9 million, $5.0 million, $5.1 million, and $5.2 million. &#39;&#39;Run the trial with 10,000 simulations&#39;&#39;
+
+Open the &quot;Escape Room Simulation&quot; excel file and launch @Risk. Find the hidden values needed to complete the model. Once you have those values, input them into the excel file and run the simulation. Upon completion, explore the results summary.
+
+The combination of the Simulation Lock is &quot;Simulation # with highest mean value of cash left, Simulation # with lowest maximum value for cost of borrowing, Simulation # with highest mean value of amount to borrow&quot;
+
+[Try your lock combination--&gt;[[Simulation Check]] ]
+
+//(text-colour:cyan)[Go back to the [[Main Classroom]] to try a different lock]//
+</tw-passagedata><tw-passagedata pid="8" name="AHP Check" tags="" position="250,600" size="100,100">(set:$answerahp to (prompt:&quot;Please enter the AHP Lock combination here.&quot;,&quot;&quot;))
+(if:$answerahp is &quot;5.315,0.079,0.070&quot;)[UNLOCKED!(set: $ahproom to true) Return to [[Main Classroom]]](else:)[Lock doesn&#39;t move. Check your values [[AHP Lock]] ]</tw-passagedata><tw-passagedata pid="9" name="Final Room" tags="" position="600,600" size="100,100">(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X=&quot;)[You did it. 
+
+Go tell Patrick your favourite math joke to complete the escape room!]</tw-passagedata><tw-passagedata pid="10" name="Find Capital Amount for Simulation Lock" tags="" position="1175,125" size="100,100">In order to find the value of the initial capital amount needed for the Simulation Lock, review your previous models and complete the below calculation:
+
+//PWHL Player Selection Model:// 
+
+            Expected Salary of Taylor Cava
+(text-colour:red)[//x//]   Expected Salary of Natalie Heise
+(text-colour:red)[//x//]   Victories added from Renata Keller
+(text-colour:red)[//÷//]   3640
+______________________________________
+
+
+
+&lt;!--6000000--&gt;
+
+Once you are confident you have the value, return to the [[Simulation Lock]] </tw-passagedata><tw-passagedata pid="11" name="Find Lower Bound of Return for Simulation Lock" tags="" position="1100,250" size="100,100">In order to find the value of the lower bound of return needed for Simulation Lock, review your previous models and complete the below calculation:
+
+//Book Sales Model://
+
+            Probability of low sales for your book 
+(text-colour:red)[//x//]  Probability of high sales given an unpromising survey result
+
+&lt;!--0.05--&gt;
+
+Once you are confident you have the value, return to the [[Simulation Lock]] </tw-passagedata><tw-passagedata pid="12" name="Find Mean for Simulation Lock" tags="" position="1125,0" size="100,100">In order to find the value of the mean needed for the Simulation Lock, review your previous models and complete the below calculation:
+
+//Slapshot Transportation Model (First one):// 
+
+             the optimal value of the optimized solution
+ (text-colour:red)[//+//] total number of sticks shipped from Kenora to Toronto
+(text-colour:red)[//-//] total number of sticks shipped from Shawinigan to Ottawa
+ (text-colour:red)[//+//]   125
+______________________________________
+
+
+
+&lt;!--5000--&gt;
+
+Once you are confident you have the value, return to the [[Simulation Lock]] </tw-passagedata><tw-passagedata pid="13" name="Simulation Check" tags="" position="725,0" size="100,100">(set:$answeropt to (prompt:&quot;Please enter the three values here.&quot;,&quot;&quot;))
+(if:$answeropt is &quot;4,8,1&quot;)[UNLOCKED!(set: $simroom to true) Return to [[Main Classroom]]](else:)[Lock doesn&#39;t move. Check your values [[Simulation Lock]] ]</tw-passagedata><tw-passagedata pid="14" name="Decision Tree Check" tags="" position="575,0" size="100,100">(set:$answeropt to (prompt:&quot;Please enter the three values here.&quot;,&quot;&quot;))
+(if:$answeropt is &quot;0.112,0.378,0.742&quot;)[UNLOCKED!(set: $treeroom to true) Return to [[Main Classroom]]](else:)[Lock doesn&#39;t move. Check your values [[Decision Tree Lock]] ]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
